@@ -61,7 +61,11 @@ const App = () => {
   return (
     <Fragment>
       <GlobalStyle />
-      <Navbar searchFood={searchFood} filterFoods={filterFoods} />
+      <Navbar
+        searchFood={searchFood}
+        filterFoods={filterFoods}
+        isSelected={selectedBtn}
+      />
       <ItemSection foods={searchData} />
     </Fragment>
   );

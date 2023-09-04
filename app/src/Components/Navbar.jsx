@@ -1,6 +1,6 @@
 import styled from "styled-components";
 // eslint-disable-next-line react/prop-types
-const Navbar = ({ searchFood, filterFoods }) => {
+const Navbar = ({ searchFood, filterFoods, isSelected }) => {
   const filterFood = [
     {
       name: "all",
@@ -39,9 +39,14 @@ const Navbar = ({ searchFood, filterFoods }) => {
         <Nav>
           <ul>
             {filterFood.map((food, id) => (
-              <li key={id} onClick={() => filterFoods(food.type)}>
+              <Button
+                // eslint-disable-next-line react/no-unknown-property
+                isSelect={isSelected === food.type}
+                key={id}
+                onClick={() => filterFoods(food.type)}
+              >
                 {food.name}
-              </li>
+              </Button>
             ))}
             {/* <li onClick={() => filterFoods("all")}>all</li>
             <li onClick={() => filterFoods("breakfast")}>breakfast</li>
@@ -70,6 +75,11 @@ const LogoArea = styled.div`
   display: flex;
   justify-content: space-between;
   align-items: center;
+
+  @media (0 < width <768px) {
+    flex-direction: column;
+    gap: 20px;
+  }
 `;
 const Logo = styled.div`
   text-align: center;
@@ -94,6 +104,9 @@ const Search = styled.div`
     &:-ms-input-placeholder {
       color: white;
     }
+    @media (0 < width <768px) {
+      margin-bottom: 15px;
+    }
   }
 `;
 const Nav = styled.nav`
@@ -103,15 +116,15 @@ const Nav = styled.nav`
     display: flex;
     align-items: center;
     margin: 0 auto;
-    li {
-      padding: 8px 20px;
-      list-style: none;
-      background: #f332c9;
-      color: white;
-      margin-right: 10px;
-      border-radius: 8px;
-      text-transform: capitalize;
-      cursor: pointer;
-    }
   }
+`;
+const Button = styled.li`
+  padding: 8px 20px;
+  list-style: none;
+  background: ${({ isSelect }) => (isSelect ? "#ac0f8a" : "#f332c9")};
+  color: white;
+  margin-right: 10px;
+  border-radius: 8px;
+  text-transform: capitalize;
+  cursor: pointer;
 `;

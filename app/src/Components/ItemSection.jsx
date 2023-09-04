@@ -29,7 +29,7 @@ const ItemSection = ({ foods }) => {
 export default ItemSection;
 
 const Section = styled.section`
-  height: calc(100vh - 150px);
+  min-height: calc(100vh - 150px);
   background-image: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.8)),
     url("./Images/bg.jpg");
   background-attachment: fixed;
@@ -45,6 +45,8 @@ const Container = styled.div`
 const Grid = styled.div`
   display: flex;
   flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
   gap: 10px;
 `;
 const Spacer = styled.div`
@@ -52,7 +54,8 @@ const Spacer = styled.div`
 `;
 const Item = styled.div`
   display: flex;
-  justify-content: space-around;
+  align-items: center;
+  justify-content: center;
   background: linear-gradient(
     135deg,
     rgba(255, 255, 255, 0.4),
