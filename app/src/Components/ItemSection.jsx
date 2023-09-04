@@ -103,5 +103,13 @@ const Button = styled.div`
     color: white;
     font-weight: 700;
     font-size: small;
+    border: 1px solid transparent;
+    border-radius: 8px;
+    margin-top: 5px;
+    &:hover {
+      background: white;
+      color: #f332c9;
+      border: 1px solid #f332c9;
+    }
   }
 `;

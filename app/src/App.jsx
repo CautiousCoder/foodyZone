@@ -7,6 +7,7 @@ import ItemSection from "./Components/ItemSection";
 export const BASE_URL = "http://localhost:9000";
 const App = () => {
   const [data, setDate] = useState([]);
+  const [searchData, setSearchData] = useState([]);
   const [loading, setLoding] = useState(false);
   const [error, setError] = useState("");
 
@@ -16,8 +17,8 @@ const App = () => {
       try {
         const response = await fetch(BASE_URL);
         const jsonData = await response.json();
-        console.log(jsonData);
         setDate(jsonData);
+        setSearchData(jsonData);
         setLoding(false);
       } catch (err) {
         setError(`Failed to fetch data. ${err}`);
@@ -27,13 +28,27 @@ const App = () => {
     fatchFoodData();
   }, []);
 
+  const searchFood = (e) => {
+    const searchValue = e.target.value;
+    console.log(searchValue);
+
+    if (searchValue === "") {
+      setSearchData(null);
+    }
+
+    const filter = data.filter((food) =>
+      food.name.toLowerCase().includes(searchValue.toLowerCase())
+    );
+    setSearchData(filter);
+  };
+
   if (error) return <h2>{error}</h2>;
   if (loading) return <h2>Loading....</h2>;
   return (
     <Fragment>
       <GlobalStyle />
-      <Navbar />
-      <ItemSection foods={data} />
+      <Navbar searchFood={searchFood} />
+      <ItemSection foods={searchData} />
     </Fragment>
   );
 };

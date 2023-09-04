@@ -1,5 +1,6 @@
 import styled from "styled-components";
-const Navbar = () => {
+// eslint-disable-next-line react/prop-types
+const Navbar = ({ searchFood }) => {
   return (
     <TopSection>
       <NavbarSection>
@@ -13,6 +14,7 @@ const Navbar = () => {
               name="search"
               id="search"
               placeholder="Search Food..."
+              onChange={searchFood}
             />
           </Search>
         </LogoArea>
