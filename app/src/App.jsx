@@ -10,6 +10,7 @@ const App = () => {
   const [searchData, setSearchData] = useState([]);
   const [loading, setLoding] = useState(false);
   const [error, setError] = useState("");
+  const [selectedBtn, setSelectedBtn] = useState("all");
 
   useEffect(() => {
     const fatchFoodData = async () => {
@@ -30,10 +31,10 @@ const App = () => {
 
   const searchFood = (e) => {
     const searchValue = e.target.value;
-    console.log(searchValue);
 
     if (searchValue === "") {
       setSearchData(null);
+      return;
     }
 
     const filter = data.filter((food) =>
@@ -42,12 +43,25 @@ const App = () => {
     setSearchData(filter);
   };
 
+  const filterFoods = (type) => {
+    if (type === "all") {
+      setSearchData(data);
+      setSelectedBtn("all");
+      return;
+    }
+    const filter = data.filter((food) =>
+      food.type.toLowerCase().includes(type.toLowerCase())
+    );
+    setSearchData(filter);
+    setSelectedBtn(type);
+  };
+
   if (error) return <h2>{error}</h2>;
   if (loading) return <h2>Loading....</h2>;
   return (
     <Fragment>
       <GlobalStyle />
-      <Navbar searchFood={searchFood} />
+      <Navbar searchFood={searchFood} filterFoods={filterFoods} />
       <ItemSection foods={searchData} />
     </Fragment>
   );

@@ -1,6 +1,6 @@
 import styled from "styled-components";
 // eslint-disable-next-line react/prop-types
-const Navbar = ({ searchFood }) => {
+const Navbar = ({ searchFood, filterFoods }) => {
   return (
     <TopSection>
       <NavbarSection>
@@ -20,10 +20,10 @@ const Navbar = ({ searchFood }) => {
         </LogoArea>
         <Nav>
           <ul>
-            <li>all</li>
-            <li>breadfast</li>
-            <li>lunch</li>
-            <li>dinner</li>
+            <li onClick={() => filterFoods("all")}>all</li>
+            <li onClick={() => filterFoods("breadfast")}>breadfast</li>
+            <li onClick={() => filterFoods("lunch")}>lunch</li>
+            <li onClick={() => filterFoods("dinner")}>dinner</li>
           </ul>
         </Nav>
       </NavbarSection>
