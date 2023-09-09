@@ -1,6 +1,6 @@
-# React + Vite
+# Contact App ---> React + Vite
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+This is a simple Firebase Contact App. Here we are contacts create, update and delete operations perform. 
 
 Currently, two official plugins are available:
 
