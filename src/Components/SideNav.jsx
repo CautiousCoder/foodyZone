@@ -18,7 +18,7 @@ const SideNav = ({ props }) => {
     },
   ];
   return (
-    <Stack justify="space-between" height="100vh" maxW="16rem" bg="white" p="2">
+    <Stack justify="space-between" height="100%" maxW="16rem" bg="white" p="2">
       <Box>
         <Text
           textTransform="uppercase"

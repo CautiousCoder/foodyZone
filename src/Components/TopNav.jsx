@@ -10,11 +10,11 @@ import {
   MenuList,
 } from "@chakra-ui/react";
 import { BsChevronDown } from "react-icons/bs";
-import { FaRegUserCircle } from "react-icons/fa";
+import { FaBars, FaRegUserCircle } from "react-icons/fa";
 import { HiOutlineLogout } from "react-icons/hi";
 import { MdOutlineSupportAgent } from "react-icons/md";
 
-const TopNav = ({ props }) => {
+const TopNav = ({ title, onOpen }) => {
   return (
     <Box bg="white" width="100%" h="16">
       <Flex
@@ -22,11 +22,19 @@ const TopNav = ({ props }) => {
         m="auto"
         alignItems="center"
         w={{
-          base: "16rem",
+          base: "90%",
           md: "85%",
         }}
         height="full"
       >
+        <Icon
+          display={{
+            base: "block",
+            md: "none",
+          }}
+          onClick={onOpen}
+          as={FaBars}
+        />
         <Heading
           textTransform="capitalize"
           as="h1"
@@ -36,7 +44,7 @@ const TopNav = ({ props }) => {
             lg: "4xl",
           }}
         >
-          dashboard
+          {title}
         </Heading>
         <Menu>
           <MenuButton
