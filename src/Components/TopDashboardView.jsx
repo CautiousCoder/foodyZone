@@ -43,7 +43,7 @@ const TopDashboardView = ({ props }) => {
           }}
           gap={{
             base: "2",
-            lg: "5",
+            lg: "4",
           }}
         >
           <Stack>
@@ -66,17 +66,10 @@ const TopDashboardView = ({ props }) => {
                 mr="-3"
                 fontSize={{
                   base: "3xl",
-                  md: "4xl",
                 }}
                 as={TbCurrencyTaka}
               />
-              <Heading
-                as="h1"
-                fontSize={{
-                  base: "2xl",
-                  md: "3xl",
-                }}
-              >
+              <Heading as="h1" fontSize={"2xl"}>
                 112,312.24
               </Heading>
             </HStack>
@@ -94,13 +87,7 @@ const TopDashboardView = ({ props }) => {
             </Text>
             <Flex gap={4}>
               <HStack>
-                <Heading
-                  as="h1"
-                  fontSize={{
-                    base: "2xl",
-                    md: "3xl",
-                  }}
-                >
+                <Heading as="h1" fontSize={"2xl"}>
                   22.39401000
                 </Heading>
                 <Tag textTransform="uppercase" colorScheme="gray">
@@ -113,17 +100,10 @@ const TopDashboardView = ({ props }) => {
                   mr="-3"
                   fontSize={{
                     base: "3xl",
-                    md: "4xl",
                   }}
                   as={TbCurrencyTaka}
                 />
-                <Heading
-                  as="h1"
-                  fontSize={{
-                    base: "2xl",
-                    md: "3xl",
-                  }}
-                >
+                <Heading as="h1" fontSize={"2xl"}>
                   1,300.00
                 </Heading>
                 <Tag textTransform="uppercase" colorScheme="gray">

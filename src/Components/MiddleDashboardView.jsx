@@ -71,7 +71,7 @@ const MiddleDashboardView = ({ props }) => {
     },
   ];
   return (
-    <Container maxW="container.lg" mt="12" px="0">
+    <Container maxW="container.lg" mt="6" px="0">
       <Grid
         minH="80"
         templateColumns={{ base: "repeat(1, 1fr)", md: "repeat(2, 1fr)" }}
@@ -102,7 +102,7 @@ const MiddleDashboardView = ({ props }) => {
                 <Flex>
                   <Heading
                     fontSize={{
-                      base: "20px",
+                      base: "18px",
                       md: "2xs",
                       lg: "2xl",
                     }}
@@ -211,13 +211,13 @@ const MiddleDashboardView = ({ props }) => {
                       as={trans.nameIcon}
                     />
                     <Stack ml="3">
-                      <Heading as="h2" fontSize="2xl">
+                      <Heading as="h2" fontSize="18px">
                         {trans.token}: {trans.sell ? "Sell" : "Diposit"}
                       </Heading>
                       <Text
                         fontSize={{
                           base: "12px",
-                          lg: "16px",
+                          lg: "14px",
                         }}
                         fontWeight="medium"
                       >
@@ -226,7 +226,7 @@ const MiddleDashboardView = ({ props }) => {
                     </Stack>
                   </Flex>
                   <Stack>
-                    <Heading as="h2" fontSize="2xl">
+                    <Heading as="h2" fontSize="18px">
                       <Icon
                         fontSize="sm"
                         mb="-0.5"
@@ -268,8 +268,68 @@ const MiddleDashboardView = ({ props }) => {
             </Button>
           </Stack>
         </GridItem>
-        <GridItem bg="white" rounded="lg" rowSpan={1} colSpan={1} />
-        <GridItem bg="white" rounded="lg" rowSpan={1} colSpan={1} />
+        <GridItem
+          bg="white"
+          rounded="lg"
+          rowSpan={1}
+          colSpan={1}
+          px={{
+            base: "2",
+            sm: "3",
+            md: "4",
+          }}
+          py="2"
+        >
+          <Stack gap={1}>
+            <Tag
+              as="span"
+              maxW={16}
+              textTransform="capitalize"
+              fontSize="medium"
+              bg={"teal"}
+              py={2}
+              px={3}
+              color={"white"}
+            >
+              loans
+            </Tag>
+            <Text fontWeight="sm" fontSize={{ base: "12px", md: "14px" }}>
+              Lorem ipsum dolor sit amet consectetur adipisicing elit. Incidunt
+              alias omnis dolore quia eos animi.
+            </Text>
+          </Stack>
+        </GridItem>
+        <GridItem
+          bg="white"
+          rounded="lg"
+          rowSpan={1}
+          colSpan={1}
+          px={{
+            base: "2",
+            sm: "3",
+            md: "4",
+          }}
+          py="2"
+        >
+          <Stack gap={1}>
+            <Tag
+              as="span"
+              maxW={20}
+              textTransform="capitalize"
+              fontSize="medium"
+              bg={"teal"}
+              py={2}
+              px={3}
+              color={"white"}
+            >
+              contact
+            </Tag>
+            <Text fontWeight="sm" fontSize={{ base: "12px", md: "14px" }}>
+              Lorem ipsum dolor sit amet consectetur adipisicing elit. Incidunt
+              alias omnis dolore quia eos animi.
+            </Text>
+          </Stack>
+        </GridItem>
       </Grid>
     </Container>
   );
