@@ -1,7 +1,10 @@
-import { Box, HStack, Icon, Stack, Text } from "@chakra-ui/react";
+import { Box, Stack, Text } from "@chakra-ui/react";
 import { BiSupport } from "react-icons/bi";
 import { BsArrowDownUp } from "react-icons/bs";
 import { RxDashboard } from "react-icons/rx";
+
+import { Link } from "react-router-dom";
+import NavItemComponent from "./NavItemComponent";
 const SideNav = ({ props }) => {
   const navlinks = [
     {
@@ -14,7 +17,7 @@ const SideNav = ({ props }) => {
       id: 2,
       icon: BsArrowDownUp,
       text: "Transactions",
-      link: "/transactions",
+      link: "/transaction",
     },
   ];
   return (
@@ -31,33 +34,16 @@ const SideNav = ({ props }) => {
         </Text>
         <Stack direction="column">
           {navlinks.map((nav) => (
-            <HStack
-              key={nav.id}
-              cursor="pointer"
-              px="3"
-              py="2"
-              bg="gray.100"
-              rounded="md"
-              _hover={{ bg: "gray.200", fontWeight: "semibold" }}
-            >
-              <Icon as={nav.icon} />
-              <Text textTransform="capitalize">{nav.text}</Text>
-            </HStack>
+            <Link to={nav.link} key={nav.id}>
+              <NavItemComponent text={nav.text} icon={nav.icon} />
+            </Link>
           ))}
         </Stack>
       </Box>
       <Box pb="4">
-        <HStack
-          cursor="pointer"
-          px="3"
-          py="2"
-          bg="gray.100"
-          rounded="md"
-          _hover={{ bg: "gray.200", fontWeight: "semibold" }}
-        >
-          <Icon as={BiSupport} />
-          <Text textTransform="capitalize">Support</Text>
-        </HStack>
+        <Link to={"/support"}>
+          <NavItemComponent text={"Support"} icon={BiSupport} />
+        </Link>
       </Box>
     </Stack>
   );
