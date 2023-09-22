@@ -20,6 +20,7 @@ const SideNav = ({ props }) => {
       link: "/transaction",
     },
   ];
+
   return (
     <Stack justify="space-between" height="100%" maxW="16rem" bg="white" p="2">
       <Box>
@@ -34,14 +35,21 @@ const SideNav = ({ props }) => {
         </Text>
         <Stack direction="column">
           {navlinks.map((nav) => (
-            <Link to={nav.link} key={nav.id}>
+            <Link
+              to={nav.link}
+              key={nav.id}
+              _activeLink={{ bg: "gray.200", fontWeight: "semibold" }}
+            >
               <NavItemComponent text={nav.text} icon={nav.icon} />
             </Link>
           ))}
         </Stack>
       </Box>
       <Box pb="4">
-        <Link to={"/support"}>
+        <Link
+          to={"/support"}
+          _activeLink={{ bg: "gray.200", fontWeight: "semibold" }}
+        >
           <NavItemComponent text={"Support"} icon={BiSupport} />
         </Link>
       </Box>
