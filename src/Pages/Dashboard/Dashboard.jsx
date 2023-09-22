@@ -1,7 +1,7 @@
 import { Box } from "@chakra-ui/react";
 import DashboardLayout from "../../Components/DashboardLayout";
-import MiddleDashboardView from "../../Components/MiddleDashboardView";
-import TopDashboardView from "../../Components/TopDashboardView";
+import MiddleDashboardView from "./Components/MiddleDashboardView";
+import TopDashboardView from "./Components/TopDashboardView";
 
 const Dashboard = ({ props }) => {
   return (
